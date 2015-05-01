@@ -1,0 +1,45 @@
+{
+  "name": "metalsmith-react",
+  "version": "1.0.0",
+  "description": "Metalsmith plugin to use React as a template engine",
+  "keywords": [
+    "metalsmith",
+    "metalsmith-plugin"
+  ],
+  "author": "Maxime Thirouin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoOx/metalsmith-react.git"
+  },
+  "homepage": "https://github.com/MoOx/metalsmith-react",
+  "bugs": {
+    "url": "https://github.com/MoOx/metalsmith-react/issues"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "dependencies": {
+    "async": "^0.9.0",
+    "multimatch": "^2.0.0",
+    "react": "^0.13.2"
+  },
+  "devDependencies": {
+    "babel": "^5.1.13",
+    "babel-eslint": "^3.0.1",
+    "babel-tape-runner": "^1.1.0",
+    "eslint": "^0.20.0",
+    "eslint-plugin-react": "^2.2.0",
+    "metalsmith": "^1.7.0",
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "tape": "babel-tape-runner '__tests__/*.js'",
+    "test": "npm run lint && npm run tape",
+    "prepublish": "babel src --out-dir dist"
+  }
+}
