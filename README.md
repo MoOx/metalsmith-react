@@ -22,6 +22,7 @@ new Metalsmith("./")
     react({
       pattern: "**/*.md",
       templatesPath: "modules", // default to "templates"
+      before: "<!doctype html>\n",
       data: {
         some: "data", // you might be able to consume that as props in the template
       }),
@@ -49,6 +50,14 @@ Pattern to filter files. Used by [multimatch](https://github.com/sindresorhus/mu
 #### `data` (default: `{}`)
 
 Object passed to React component in addition to the file itself.
+
+#### `before` (default: "")
+
+Allows to prepend something before the rendered component (eg: `{before: "<!doctype html>\n"}`)
+
+#### `after` (default: "")
+
+Allows to append something after the rendered component
 
 #### `reactRender` (default: `"renderToStaticMarkup"`)
 

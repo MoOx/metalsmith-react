@@ -10,6 +10,8 @@ export default (options) => {
     defaultTemplate: "default",
     pattern: "**/*",
     data: {},
+    before: "",
+    after: "",
     reactRender: "renderToStaticMarkup", // or renderToString
     ...options,
   }
@@ -30,7 +32,9 @@ export default (options) => {
 
         try {
           files[file].contents = new Buffer(
-            react[options.reactRender](component)
+            options.before +
+            react[options.reactRender](component) +
+            options.after
           )
         }
         catch (err) {
