@@ -2,7 +2,8 @@ import path from "path"
 
 import multimatch from "multimatch"
 import {each} from "async"
-import react from "react"
+import React from "react"
+import ReactDOMServer from "react-dom/server"
 
 export default (options) => {
   options = {
@@ -23,8 +24,9 @@ export default (options) => {
       multimatch(Object.keys(files), options.pattern),
       (file, cb) => {
         const template = metalsmith.path(path.join(options.templatesPath, files[file].template || options.defaultTemplate))
-        const reactClass = require(template)
-        const component = new (react.createFactory(reactClass))({
+        const reactClass = require(template).default
+        const factory = React.createFactory(reactClass);
+        const component = new factory({
           ...metadata,
           ...options.data,
           file: files[file],
@@ -33,7 +35,7 @@ export default (options) => {
         try {
           files[file].contents = new Buffer(
             options.before +
-            react[options.reactRender](component) +
+            ReactDOMServer[options.reactRender](component) +
             options.after
           )
         }

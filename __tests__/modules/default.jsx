@@ -2,16 +2,16 @@ import React, {Component, PropTypes} from "react"
 
 export default class DefaultTemplate extends Component {
 
-  static displayName = "DefaultTemplate"
+  static displayName = "DefaultTemplate";
 
   static propTypes = {
     file: PropTypes.object.isRequired,
-  }
+  };
 
   static childContextTypes = {
     a: PropTypes.string,
     file: PropTypes.object.isRequired,
-  }
+  };
 
   getChildContext() {
     return {
