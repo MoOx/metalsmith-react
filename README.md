@@ -5,7 +5,7 @@
 Note that this module doesn't handle jsx.
 You might use [babel(-node)](http://babeljs.io/) to handle that.
 
-## Installation
+## Install
 
 ```console
 $ npm install metalsmith-react
@@ -63,6 +63,14 @@ Allows to append something after the rendered component
 
 React render method. You can use `"renderToString"` if you want.
 
-## [Changelog](CHANGELOG.md)
+---
 
-## [License](LICENSE)
+## CONTRIBUTING
+
+* ⇄ Pull requests and ★ Stars are always welcome.
+* For bugs and feature requests, please create an issue.
+* Pull requests must be accompanied by passing automated tests (`$ npm test`).
+
+## [CHANGELOG](CHANGELOG.md)
+
+## [LICENSE](LICENSE)

@@ -6,52 +6,54 @@
     "metalsmith",
     "metalsmith-plugin"
   ],
-  "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ]
-  },
   "author": "Maxime Thirouin",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MoOx/metalsmith-react.git"
-  },
-  "homepage": "https://github.com/MoOx/metalsmith-react",
-  "bugs": {
-    "url": "https://github.com/MoOx/metalsmith-react/issues"
-  },
-  "files": [
-    "CHANGELOG.md",
-    "LICENSE",
-    "dist"
-  ],
+  "repository": "https://github.com/MoOx/metalsmith-react.git",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "!**/__tests__"
+  ],
   "dependencies": {
     "async": "^0.9.0",
-    "babel": "^6.3.26",
     "multimatch": "^2.0.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
   },
   "devDependencies": {
+    "ava": "^0.10.0",
     "babel-cli": "^6.4.0",
-    "babel-eslint": "^3.0.1",
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^4.1.6",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "babel-tape-runner": "^2.0.0",
-    "eslint": "^0.20.0",
-    "eslint-plugin-react": "^2.2.0",
-    "metalsmith": "^1.7.0",
-    "tape": "^4.0.0"
+    "babel-preset-stage-1": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-config-i-am-meticulous": "^1.0.0",
+    "metalsmith": "^1.7.0"
   },
   "scripts": {
     "lint": "eslint .",
-    "tape": "babel-tape-runner '__tests__/*.js'",
-    "test": "npm run lint && npm run tape",
-    "prepublish": "babel src --out-dir dist"
+    "tests": "ava '**/__tests__/*.js'",
+    "test": "npm run lint && npm run tests",
+    "prepublish": "babel --ignore __tests__ src --out-dir dist"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-1"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-i-am-meticulous"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-core/register"
+    ]
   }
 }

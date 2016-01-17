@@ -1,7 +1,7 @@
 import path from "path"
 
 import multimatch from "multimatch"
-import {each} from "async"
+import { each } from "async"
 import React from "react"
 import ReactDOMServer from "react-dom/server"
 
@@ -23,10 +23,13 @@ export default (options) => {
     each(
       multimatch(Object.keys(files), options.pattern),
       (file, cb) => {
-        const template = metalsmith.path(path.join(options.templatesPath, files[file].template || options.defaultTemplate))
+        const template = metalsmith.path(path.join(
+          options.templatesPath,
+          files[file].template || options.defaultTemplate
+        ))
         const reactClass = require(template).default
-        const factory = React.createFactory(reactClass);
-        const component = new factory({
+        const Factory = React.createFactory(reactClass)
+        const component = new Factory({
           ...metadata,
           ...options.data,
           file: files[file],
