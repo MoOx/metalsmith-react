@@ -31,7 +31,11 @@ test.cb("renderToStaticMarkup", (t) => {
         "text\n",
         "should not wrap file content when doesn't match pattern"
       )
-
+      t.is(
+        files["4.md"].contents.toString(),
+        "<div>Hello<div>Classic Test\n</div></div>",
+        "should wrap file content with es5 react template"
+      )
       t.end()
     })
     .build(err => {
