@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-react",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Metalsmith plugin to use React as a template engine",
   "keywords": [
     "metalsmith",
@@ -31,13 +31,16 @@
     "babel-preset-stage-1": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-config-i-am-meticulous": "^1.0.0",
-    "metalsmith": "^1.7.0"
+    "github-release-from-changelog": "^1.1.1",
+    "metalsmith": "^1.7.0",
+    "npmpub": "^2.0.0"
   },
   "scripts": {
     "lint": "eslint .",
     "tests": "ava '**/__tests__/*.js'",
     "test": "npm run lint && npm run tests",
-    "prepublish": "babel --ignore __tests__ src --out-dir dist"
+    "prepublish": "babel --ignore __tests__ src --out-dir dist",
+    "release": "npmpublish && github-release-from-changelog"
   },
   "babel": {
     "presets": [
