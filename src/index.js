@@ -23,11 +23,12 @@ export default (options) => {
     each(
       multimatch(Object.keys(files), options.pattern),
       (file, cb) => {
-        const template = metalsmith.path(path.join(
+        const templatePath = metalsmith.path(path.join(
           options.templatesPath,
           files[file].template || options.defaultTemplate
         ))
-        const reactClass = require(template).default
+        const template = require(templatePath)
+        const reactClass = template.default || template
         const Factory = React.createFactory(reactClass)
         const component = new Factory({
           ...metadata,

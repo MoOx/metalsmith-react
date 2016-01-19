@@ -25,8 +25,9 @@ new Metalsmith("./")
       before: "<!doctype html>\n",
       data: {
         some: "data", // you might be able to consume that as props in the template
-      }),
+      },
       reactRender: "renderToStaticMarkup" //you can use "renderToString" if you want
+    })
   )
   .build(err => {if (err) {throw err}})
 ```
