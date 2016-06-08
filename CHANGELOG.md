@@ -1,3 +1,7 @@
+# 2.0.2 - 2016-06-08
+
+- Add message about [Phenomic](https://phenomic.io/) to use React on the front-end
+
 # 2.0.1 - 2015-01-19
 
 - Fixed: support for es5 React components
