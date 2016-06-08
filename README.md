@@ -2,6 +2,21 @@
 
 > Metalsmith plugin to use React as a template engine
 
+---
+
+## _Is it possible to use React on the front-end to be able to use stuff like `onClick`?_
+
+That's a really good question.
+This can be probably done with metalsmith, but this tool is not the right choice.
+Not front-end oriented enough.
+
+**Because of this frustration, I created [Phenomic](https://phenomic.io/),
+which is a modern static website generator based on React and Webpack.**
+
+_This project is under active development (unlike metalsmith), so give it a try!_
+
+---
+
 Note that this module doesn't handle jsx.
 You might use [babel(-node)](http://babeljs.io/) to handle that.
 
