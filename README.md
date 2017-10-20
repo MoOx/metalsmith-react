@@ -15,7 +15,9 @@ which is a modern static website generator based on React and Webpack.**
 
 _This project is under active development (unlike metalsmith), so give it a try!_
 
----
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/6RNUx3a3Vj2k5iApeppsc9L9/MoOx/metalsmith-react'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/6RNUx3a3Vj2k5iApeppsc9L9/MoOx/metalsmith-react.svg' />
+</a>
 
 Note that this module doesn't handle jsx.
 You might use [babel(-node)](http://babeljs.io/) to handle that.
